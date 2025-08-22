@@ -7,17 +7,21 @@ phases:
     commands:
       - echo Installing dependencies...
       - npm install
+
   build:
     commands:
       - echo Building React app...
       - npm run build
+
   post_build:
     commands:
       - echo Deploying to S3...
-      - aws s3 sync build/ s3://my-react-wesite-123 --delete
+      # replace the bucket name and region with your actual ones
+      - aws s3 sync build/ s3://my-react-website-123 --delete --region ap-south-1
 
 artifacts:
   files:
-    - '/*'
+    - '**/*'
   base-directory: build
+
   
