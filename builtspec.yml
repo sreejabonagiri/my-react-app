@@ -17,7 +17,7 @@ phases:
     commands:
       - echo Deploying to S3...
       # replace the bucket name and region with your actual ones
-      - aws s3 sync build/ s3://my-react-website-123 --delete --region ap-south-1
+      - aws s3 sync build/ s3://my-react-wesite-123 --delete --region ap-south-1
 
 artifacts:
   files:
